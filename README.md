@@ -129,6 +129,22 @@ Este projeto utilizou um pipeline completo de Machine Learning, aplicando as seg
 2. **Execute as células sequencialmente.** O notebook está organizado em etapas, desde a importação dos dados até a avaliação dos modelos.
 3. **Os dados são baixados automaticamente** do repositório [ONE-TelecomX](https://github.com/mauricioaalmeida/ONE-TelecomX) na camada prata.
 
+** Para usar o modelo treinado e salvo:**
+1. Baixe o arquivo do modelo em: 'data/models/Random_Forest-7.pkl'
+2. Execute o seguinte código:
+```python
+import pickle
+
+# Carregar um modelo salvo
+model_filename = 'data/models/Random_Forest-7.pkl'
+with open(model_filename, 'rb') as file:
+  loaded_model = pickle.load(file)
+
+# Usar o modelo carregado para previsões
+y_pred = loaded_model.predict(x_test)
+print(f"Previsões com o modelo {model_name}:", y_pred)
+```   
+
 ## 📊 Principais Resultados
 
 - Pipeline de preparação de dados com tratamento, encoding e normalização.
@@ -142,9 +158,19 @@ Este projeto utilizou um pipeline completo de Machine Learning, aplicando as seg
 ## 📈 Exemplos de Gráficos
 
 Algumas visualizações geradas no notebook incluem:
+
 - Curva ROC dos modelos
+  
+![Grafico](https://github.com/mauricioaalmeida/ONE-TelecomX_parte2-/blob/main/data/Images/Grafico_ROC.png)
+ 
 - Matriz de confusão
+  
+![Grafico](https://github.com/mauricioaalmeida/ONE-TelecomX_parte2-/blob/main/data/Images/Grafico_Confusao.png)
+
 - Importância das variáveis
+  
+![Grafico](https://github.com/mauricioaalmeida/ONE-TelecomX_parte2-/blob/main/data/Images/Grafico_Features_SHAD.png)
+
 
 ## 💡 Conclusão Estratégica
 
